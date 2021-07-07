@@ -1,5 +1,9 @@
 # inspector-gadget-acikhack2021
 
+<p align="center">
+  <img src="https://github.com/inspectorgadgetteknofest/inspector-gadget-acikhack2021/blob/main/images/Inspector-Gadget.png">
+</p>
+
 ## 1. ...
 ## 2. ...
 ## 3. ...

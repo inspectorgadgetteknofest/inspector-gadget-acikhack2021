@@ -5,10 +5,10 @@
 ## 3. ...
 ## 4. ...
 ## 5. Preprocess
-<br>
+
 Bu bölümde Türkçe Doğal Dil işleme projelerinde kullanılması muhtemel bütün ön işleme süreçlerini toplamaya çalıştık.
 
-### Text
+### 5.1 Text
 * lower: Metni küçük harflere çevirir.
 * removePunc: Metin içerisindeki noktalama işaretlerini atar.
 * sentTokenize: Metni cümlelere böler.
@@ -24,4 +24,30 @@ from preprocess.text import Text
 a = Text()
 
 print(a.lower("MERHABA"))
+```
+#### Output:
+```python
+"merhaba"
+```
+<br>
+
+### 5.2 Twitter
+* removeHastag: Tweet içerisindeki hastagleri (#) atar.
+* removeMention: Tweet içerisindeki mentionları (@...) atar.
+* removeRT: Tweet içerisindeki RT'leri atar.
+
+
+#### Nasıl kullanılır?
+```python
+from preprocess.twitter import Twitter
+
+tw = Twitter()
+
+tweet = "Onlar çok mutlu. @example"
+
+print(tw.removeMention(tweet))
+```
+#### Output:
+```python
+"Onlar çok mutlu."
 ```

@@ -1,4 +1,5 @@
-import re   
+import re
+import os   
 
 
 class Twitter():
@@ -55,3 +56,47 @@ class Twitter():
         """
 
         return re.sub(r"\brt\b","", tweet)
+    
+    def getTweet(self, q = "",  from_ = "", maxResult = 500, since = "", until = "", showQuery = True):
+        """
+        Get retweet using snscrape library. (snscrape kütüphanesini kullanarak tweet toplar.)
+        
+        Params:
+        
+        * q: Query word. (Sorgu kelimesi)
+        
+        * from_: Twitter user name. Ex. jack (Twitter kullanıcı adı. Örn. jack)
+        
+        * maxResult: Count of tweets. (Tweet sayısı)
+        
+        * since: Start date. Usage yyyy-mm-dd. (Başlangıç tarihi. Kullanımı yyyy-mm-dd.) 
+
+        * until: Finish date. Usage yyyy-mm-dd. (Bitiş tarihi. Kullanımı yyyy-mm-dd.)
+        
+        * showQuery: snscrape query (snscrape sorgusu)
+        
+        
+        Example: 
+        
+        Input:
+        
+        \ttext (query) 
+        
+        Output:
+        
+        \tfile (json) 
+        """
+        
+        if until != "": until = " until:" + until
+        
+        if from_ != "": from_ = " from:" + from_
+        
+        if since != "": since = "--since " + since
+        
+        if showQuery:
+        
+            # Using OS library to call CLI commands in Python
+            print(f'snscrape --jsonl --max-results {maxResult} {since} twitter-search "{q}{until}{from_}" > text-query-tweets.json')
+            
+            
+        os.system(f'snscrape --jsonl --max-results {maxResult} {since} twitter-search "{q}{until}{from_}" > text-query-tweets.json')

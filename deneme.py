@@ -25,3 +25,12 @@ label, score = model.sentAnalysis(text)
 
 print("Label: ", label)
 print("Score: ", score)
+
+
+from preprocess.twitter import Twitter
+
+tw = Twitter()
+
+tw.getTweet(from_="jack")
+
+

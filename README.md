@@ -39,6 +39,7 @@ print(a.lower("MERHABA"))
 * removeHastag: Tweet içerisindeki hastagleri (#) atar.
 * removeMention: Tweet içerisindeki mentionları (@...) atar.
 * removeRT: Tweet içerisindeki RT'leri atar.
+* getTweet: Verilen parametrelere göre tweet toplar.
 
 
 #### Nasıl kullanılır?
@@ -55,3 +56,24 @@ print(tw.removeMention(tweet))
 ```python
 "Onlar çok mutlu."
 ```
+<br>
+
+#### Nasıl kullanılır? (getTweet)
+```python
+from preprocess.twitter import Twitter
+
+tw = Twitter()
+
+tw.getTweet(from_="jack")
+```
+Çıktı olarak  dosyası oluşturur. Bu dosyayı okumak için:
+
+```python
+import pandas as pd
+
+df = pd.read_json('text-query-tweets.json', lines=True)
+```
+
+
+### References:
+* https://github.com/JustAnotherArchivist/snscrape

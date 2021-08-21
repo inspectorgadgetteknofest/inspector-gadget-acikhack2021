@@ -1,18 +1,14 @@
-# inspector-gadget-acikhack2021
+# Turkkish NLP Toolkit
 
 <p align="center">
   <img src="https://github.com/inspectorgadgetteknofest/inspector-gadget-acikhack2021/blob/main/ToolsTwitter/images/Inspector-Gadget.png">
 </p>
 
-## 1. ...
-## 2. ...
-## 3. ...
-## 4. ...
-## 5. Preprocess
+
 
 Bu bölümde Türkçe Doğal Dil işleme projelerinde kullanılması muhtemel bütün ön işleme süreçlerini toplamaya çalıştık.
 
-### 5.1 Text
+### 1 Text
 * lower: Metni küçük harflere çevirir.
 * removePunc: Metin içerisindeki noktalama işaretlerini atar.
 * sentTokenize: Metni cümlelere böler.
@@ -35,7 +31,7 @@ print(a.lower("MERHABA"))
 ```
 <br>
 
-### 5.2 Twitter
+### 2 Twitter
 * removeHastag: Tweet içerisindeki hastagleri (#) atar.
 * removeMention: Tweet içerisindeki mentionları (@...) atar.
 * removeRT: Tweet içerisindeki RT'leri atar.

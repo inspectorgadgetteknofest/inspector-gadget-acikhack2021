@@ -7,17 +7,32 @@ Bu bölümde Zeroshot+BERT yapısını kullanarak oluşturduğumuz pipeline ile 
 </p>
 
 
-### 1.1 Zeroshot:
+## 1.1 Zeroshot:
 Zeroshot modeli önce büyük bir külliyat ile  gözetimsiz öğrenme yöntemiyle eğitilir, cosine similarity ile dil yapısını ve kelimeler arasındaki anlamsal bağı öğrenmiş olur. Eğitilmiş model sonucunda verilen metni istenilen sınıflar arasında en uygun olanı ile eşleştirir.
 
 #### Kaynak: https://joeddav.github.io/blog/2020/05/29/ZSL.html
 
-### 1.2 BERT:
+```python
+from transformers import pipeline
+
+classifier = pipeline("zero-shot-classification", model='joeddav/xlm-roberta-large-xnli')
+
+sample_text = "Bugün hava çok yağmurlu. Yağmurlu havaları sevmem."
+
+# Belirlenen sınıflar
+candidate_labels = ["olumlu", "olumsuz"]
+
+result = classifier(sample_text, candidate_labels)
+
+print(result)
+```
+
+## 1.2 BERT:
 Devlin vd. tarafından geliştirilen transformatörlerden çift yönlü kodlayıcı gösterimlere sahip olan BERT modeli ile birlikte, etiketlenmemiş metinlerin derin çift yönlü temsillerinin önceden eğitimi sırasında tüm katmanlarda sağ ve sol bağlam bilgilerinin dahil edilmesi sağlanmaktadır. Model, sonrasında ince ayar yapılarak göreve özgü şekilde eğitilebilmektedir. Bu görevler soru cevaplama, duygu analizi, metin sınıflandırma ve adlandırılmış varlık tanıma gibi farklı çeşitlerde olabilir.
 
 #### Kaynak: https://arxiv.org/abs/2106.01735
 
-### 1.3 Eğitim ve test aşamasında kullanılan veri setleri ve sonuç değerleri:
+## 1.3 Eğitim ve test aşamasında kullanılan veri setleri ve sonuç değerleri:
 
   #### a. Turkish sentiment analysis:
   Veriseti içerisinde Pozitif, Negatif ve Nötr olmak üzere 3 sınıf barındırır. Bu görevde Pozitif ve Negatif etikeltli veriler ile işlem yapılmıştır. >=0.85 olacak şekilde eşik değer belirlenmiş ve elde edilen veriler ile BERT modeli eğitilmiştir. Eğitilen BERT modelinin test verisetindeki doğruluk değeri % 99 olarak hesaplanmıştır.

@@ -8,7 +8,7 @@
 
 Bu bölümde Türkçe Doğal Dil işleme projelerinde kullanılması muhtemel bütün ön işleme süreçlerini toplamaya çalıştık.
 
-### 1 Text
+### 1. Text
 * lower: Metni küçük harflere çevirir.
 * removePunc: Metin içerisindeki noktalama işaretlerini atar.
 * sentTokenize: Metni cümlelere böler.
@@ -31,7 +31,7 @@ print(a.lower("MERHABA"))
 ```
 <br>
 
-### 2 Twitter
+### 2. Twitter
 * removeHastag: Tweet içerisindeki hastagleri (#) atar.
 * removeMention: Tweet içerisindeki mentionları (@...) atar.
 * removeRT: Tweet içerisindeki RT'leri atar.

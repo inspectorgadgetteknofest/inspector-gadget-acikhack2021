@@ -12,6 +12,7 @@ Zeroshot modeli önce büyük bir külliyat ile  gözetimsiz öğrenme yöntemiy
 
 #### Kaynak: https://joeddav.github.io/blog/2020/05/29/ZSL.html
 
+#### ZEROSHOT Prediction:
 ```python
 from transformers import pipeline
 
@@ -29,6 +30,8 @@ print(result)
 
 ## 1.2 BERT:
 Devlin vd. tarafından geliştirilen transformatörlerden çift yönlü kodlayıcı gösterimlere sahip olan BERT modeli ile birlikte, etiketlenmemiş metinlerin derin çift yönlü temsillerinin önceden eğitimi sırasında tüm katmanlarda sağ ve sol bağlam bilgilerinin dahil edilmesi sağlanmaktadır. Model, sonrasında ince ayar yapılarak göreve özgü şekilde eğitilebilmektedir. Bu görevler soru cevaplama, duygu analizi, metin sınıflandırma ve adlandırılmış varlık tanıma gibi farklı çeşitlerde olabilir.
+
+#### Kaynak: https://arxiv.org/abs/2106.01735
 
 
 #### BERT Finetuning:
@@ -62,7 +65,19 @@ model = ClassificationModel(
 model.train_model(train, acc=sklearn.metrics.accuracy_score,output_dir=MODEL_OUTPUT_DIR)
 ```
 
-#### Kaynak: https://arxiv.org/abs/2106.01735
+#### BERT Prediction:
+```python
+# Tokenizerın içe aktarılması
+tokenizer= AutoTokenizer.from_pretrained(tokenizer)
+
+# Modelin içe aktarılması
+model= AutoModelForSequenceClassification.from_pretrained(model)
+
+# Pipelineın kurulması
+nlp=pipeline("sentiment-analysis", model=model, tokenizer=tokenizer)
+
+print(nlp(sample_text))
+```
 
 ## 1.3 Eğitim ve test aşamasında kullanılan veri setleri ve sonuç değerleri:
 

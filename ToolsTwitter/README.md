@@ -1,7 +1,7 @@
 # inspector-gadget-acikhack2021
 
 <p align="center">
-  <img src="https://github.com/inspectorgadgetteknofest/inspector-gadget-acikhack2021/blob/main/images/Inspector-Gadget.png">
+  <img src="https://github.com/inspectorgadgetteknofest/inspector-gadget-acikhack2021/blob/main/ToolsTwitter/images/Inspector-Gadget.png">
 </p>
 
 ## 1. ...

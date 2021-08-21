@@ -30,6 +30,38 @@ print(result)
 ## 1.2 BERT:
 Devlin vd. tarafından geliştirilen transformatörlerden çift yönlü kodlayıcı gösterimlere sahip olan BERT modeli ile birlikte, etiketlenmemiş metinlerin derin çift yönlü temsillerinin önceden eğitimi sırasında tüm katmanlarda sağ ve sol bağlam bilgilerinin dahil edilmesi sağlanmaktadır. Model, sonrasında ince ayar yapılarak göreve özgü şekilde eğitilebilmektedir. Bu görevler soru cevaplama, duygu analizi, metin sınıflandırma ve adlandırılmış varlık tanıma gibi farklı çeşitlerde olabilir.
 
+
+#### BERT Finetuning:
+```python
+from transformers import AutoModel, AutoTokenizer
+
+tokenizer = AutoTokenizer.from_pretrained(HUGGINGFACE_MODEL_PATH)
+model = AutoModel.from_pretrained(HUGGINGFACE_MODEL_PATH)
+
+from simpletransformers.classification import ClassificationModel
+
+model_args = {
+    "use_early_stopping": True,
+    "early_stopping_delta": 0.01,
+    "early_stopping_metric": "mcc",
+    "early_stopping_metric_minimize": False,
+    "early_stopping_patience": 5,
+    "evaluate_during_training_steps": 6000,
+    "fp16": False,
+    "num_train_epochs":3  # Epoch sayısı
+}
+
+model = ClassificationModel(
+    "bert", 
+    HUGGINGFACE_MODEL_PATH,
+     use_cuda=True, 
+     args=model_args, 
+     num_labels=7  # Sınıf sayısı
+)
+
+model.train_model(train, acc=sklearn.metrics.accuracy_score,output_dir=MODEL_OUTPUT_DIR)
+```
+
 #### Kaynak: https://arxiv.org/abs/2106.01735
 
 ## 1.3 Eğitim ve test aşamasında kullanılan veri setleri ve sonuç değerleri:

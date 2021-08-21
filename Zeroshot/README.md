@@ -34,10 +34,10 @@ Devlin vd. tarafından geliştirilen transformatörlerden çift yönlü kodlayı
 
 ## 1.3 Eğitim ve test aşamasında kullanılan veri setleri ve sonuç değerleri:
 
-  #### a. Turkish sentiment analysis:
+  * <b> Turkish sentiment analysis:</b> <br>
   Veriseti içerisinde Pozitif, Negatif ve Nötr olmak üzere 3 sınıf barındırır. Bu görevde Pozitif ve Negatif etikeltli veriler ile işlem yapılmıştır. >=0.85 olacak şekilde eşik değer belirlenmiş ve elde edilen veriler ile BERT modeli eğitilmiştir. Eğitilen BERT modelinin test verisetindeki doğruluk değeri % 99 olarak hesaplanmıştır.
   
-  #### b. ttc-4900 Multiclass Text Classification: <a href= "https://www.kaggle.com/savasy/ttc4900">Link</a>
+  * <b> ttc-4900 Multiclass Text Classification: </b> <a href= "https://www.kaggle.com/savasy/ttc4900">Link</a> <br>
   Kemik grup tarafından oluşturulan veri seti içerisinde "Siyaset", "Dünya" gibi 7 benzersiz sınıf ve 4539 satır veri barındırır. Bu veriseti kullanılarak yapılan Zeroshot prediction kısmında >=0.85 olacak şekilde eşik değer belirlenmiş ve elde edilne veriler ile BERT modeli eğitilmiştir. BERT modelinin test verisetindeki doğruluk değeri %94 olarak hesaplanmıştır.
   
   

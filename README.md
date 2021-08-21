@@ -6,6 +6,8 @@
 </p>
 
 
+şimdilik lorem ipsum
+
 ## 2. Projelerimiz:
  * ### Zeroshot + BERT: <br>
  Zeroshot+BERT yapısını kullanarak oluşturduğumuz pipeline ile elinizdeki metinleri otomatik bir şekilde etiketlemeyi amaçladık. Projemize göz atmak için: <a href= "https://github.com/inspectorgadgetteknofest/inspector-gadget-acikhack2021/tree/main/Zeroshot"> Link </a>

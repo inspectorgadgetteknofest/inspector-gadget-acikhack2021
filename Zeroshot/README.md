@@ -3,7 +3,7 @@
 Bu bölümde Zeroshot+BERT yapısını kullanarak oluşturduğumuz pipeline ile elinizdeki metinleri otomatik bir şekilde etiketlemeyi amaçladık. Verisetiniz belirlediğiniz sınıflarla eğitilmiş zeroshot ile tahminlenir. Belirlenen eşik değerin üzerindeki değerlerle oluşuturulan rafine veriseti ile BERT modeli eğitilir. Bu sayede etiketlenmemiş veri seti üzerinde en doğru tahmini yapabilen bir yapı oluşturulmuş olur.
 
 <p align="center">
-  <img src="https://drive.google.com/file/d/1i6CEZXXtzpMATQIKDJJaz_NtSl9S-Lfc/view?usp=sharing">
+  <img src="https://github.com/inspectorgadgetteknofest/inspector-gadget-acikhack2021/blob/main/Zeroshot/images/diagram.png">
 </p>
 
 

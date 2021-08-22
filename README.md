@@ -19,3 +19,6 @@
  Uzun metinleri sınıflandıracak bir yapı kurmaya çalıştık.
  * ### Turkish NLP Toolkit: <br> 
  Türkçe metinler için Doğal Dil İşleme süreçlerinde lazım olabilecek araçları topladık. Projemize göz atmak için: <a href = "https://github.com/inspectorgadgetteknofest/inspector-gadget-acikhack2021/tree/main/ToolsTwitter"> Link </a>
+
+## 3. Arayüzümüz:
+![](https://user-images.githubusercontent.com/56072259/130344890-90e5e8df-bab7-44d7-8fa5-fa732ac0a490.gif)

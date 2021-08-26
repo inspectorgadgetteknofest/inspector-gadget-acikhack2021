@@ -1,0 +1,33 @@
+<style>
+/* hide radio element */
+.myradio {
+  display:none;
+  height:0px;
+  visibility:hidden;
+}
+.mybox {
+ width:100px;
+ height:50px;
+ background-color: #eeeeee;
+ display:none;
+ padding:5px;
+}
+/* change tab to bold */
+.myradio:checked + label {
+  font-weight: bold;
+} 
+/* show content */
+#radio1:checked ~ .box1,
+#radio2:checked ~ .box2
+{
+  display:block;
+}
+</style>
+ 
+<input name="myradio" type=radio id="radio1" class="myradio" checked>
+<label for="radio1">Tab 1</label> | 
+<input name="myradio" type=radio id="radio2" class="myradio">
+<label for="radio2">Tab 2</label>
+ 
+<div class="mybox box1">Box 1</div>
+<div class="mybox box2">Box 2</div>

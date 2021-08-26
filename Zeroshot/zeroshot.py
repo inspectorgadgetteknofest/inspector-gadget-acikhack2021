@@ -132,3 +132,41 @@ class Bert:
             pred_label_list.append(int(self.nlp(predict_text[idx])[0]["label"].lstrip("LABEL_")))
         
         return pred_label_list
+
+
+    
+class NER:
+    
+    def __init__(self): pass
+        
+    
+    def get_ner_model(self, path= "savasy/bert-base-turkish-ner-cased"):
+        
+        """
+        Huggingface üzerindeki istenilen ner modeline bağlanır.
+        
+        Input:
+            path [str]: modelin huggingface adresi (savasy/bert-base-turkish-ner-cased)
+        """
+        
+        from transformers import AutoTokenizer, AutoModelForTokenClassification,pipeline
+        
+        tokenizer = AutoTokenizer.from_pretrained(path)
+
+        model = AutoModelForTokenClassification.from_pretrained(path)
+        
+        
+        self.ner_nlp = pipeline("ner", model=model, tokenizer=tokenizer)
+        
+    
+    def ner_predict(self, text):
+        
+        """
+        Getirilen model üzerinden verilen metindeki varklıkları bulmaya çalışır.
+
+        Input:
+            text [str]: varlıklarını yakalamak istediğiniz metin
+        """
+        
+        return self.ner_nlp(text)
+        

@@ -1,6 +1,6 @@
 # Osmanlıca - Türkçe
 
-Bu çalışmamızda, 61092 adet Osmanlıca yazılmış Türkçe kelime ya da kelime gruplarından oluşmuş veri seti sözlüğü T5 modeline ince ayar yapılarak Osmanlıcadan Türkçeye makine çevirisi ile dönüştürülmüştür. Bu çalışmamızdaki amaç, Osmanlı alfabesi ile yazılmış kelime veya kelime gruplarının günümüz Türkçesi ile karşılıklarını oluşturan bir dil modeli ortaya çıkartmaktı. Ürettiğimiz dil modelinin Bleu score performansı 2.16'dır.
+Bu çalışmamızda, 61092 adet Osmanlıca yazılmış Türkçe kelime ya da kelime gruplarından oluşmuş veri seti sözlüğü T5 modeline ince ayar yapılarak Osmanlıcadan Türkçeye makine çevirisi ile dönüştürülmüştür. Bu çalışmamızdaki amaç, Osmanlı alfabesi ile yazılmış kelime veya kelime gruplarının günümüz Türkçesi ile karşılıklarını oluşturan bir dil modeli ortaya çıkartmaktı. Ürettiğimiz dil modelinin, çoğunlukla tek kelimelik inputlardan oluşan Bleu score performansı 2.16'dır. Veri setinin büyütülmesi ile modelin performansının da arttırılabilmesi mümkündür. 
 
 
 
